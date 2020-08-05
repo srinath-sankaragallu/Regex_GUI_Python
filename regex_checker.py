@@ -1,3 +1,9 @@
+#------------- @author: Srinath Sankragallu S-------------#
+#-- A simple GUI to check reggular exppression in python--#
+#-------contact: srinath.sankragallu@gmail.com------------#
+
+
+
 import tkinter as tk 
 from tkinter import ttk 
 from tkinter import scrolledtext

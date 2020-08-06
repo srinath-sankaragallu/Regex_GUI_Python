@@ -9,7 +9,7 @@ from tkinter import ttk
 from tkinter import scrolledtext
 import re
 win = tk.Tk() 
-win.title("ScrolledText Widget")
+win.title("Python Reggular Expression")
 
 ttk.Label(win,  
           text = "Python Reggular Expression", 

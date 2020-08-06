@@ -1,13 +1,11 @@
-#------------- @author: Srinath Sankragallu S-------------#
-#-- A simple GUI to check reggular exppression in python--#
-#-------contact: srinath.sankragallu@gmail.com------------#
-
-
-
 import tkinter as tk 
 from tkinter import ttk 
 from tkinter import scrolledtext
+import tkinter.filedialog 
+import tkinter.messagebox
 import re
+
+filename = ''
 win = tk.Tk() 
 win.title("Python Reggular Expression")
 
@@ -60,9 +58,24 @@ def do_stuff():
         addtext(msg , 'war')
     addtext('\n====================================\n')
     
+def do_save():
+    #print(str(text_area.get('1.0','end')))
+    filename = tkinter.filedialog.asksaveasfilename(
+        defaultextension='.txt' , 
+        filetypes =[('Text' , '*.txt')]
+    )
+    fp1 = open(filename,'w')
+    fp1.write(text_area.get('1.0','end'))
+    tkinter.messagebox.showinfo('FYI', f'File Saved.\n{filename}')
+    
+    
 b1 = tk.Button( win , text = 'Check' ,
                bg= 'green' , fg='white', 
                font = ("Times New Roman",12,'bold'),command = do_stuff )
 b1.grid(row = 3 , column = 1)
+b2 = tk.Button( win , text = 'Save' ,
+               bg= 'green' , fg='white', 
+               font = ("Times New Roman",12,'bold'),command = do_save )
+b2.grid(row = 3 , column = 0)
 
 win.mainloop() 

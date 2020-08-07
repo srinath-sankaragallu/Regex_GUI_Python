@@ -44,7 +44,9 @@ text_area.tag_config('result' , foreground = 'green')
 
 
 def addtext(*st):
+    text_area.configure(state='normal')
     text_area.insert(tk.INSERT,*st)
+    text_area.configure(state='disable')
     
 def do_stuff():
     reg = str(e1.get())
